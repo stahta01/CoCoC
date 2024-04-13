@@ -23,7 +23,7 @@ RMA2LW	= $(TOP)/rma2lw.sed
 	$(O2U) < $< | $(SED) -f $(DCCMOC) > $@
 
 %.s: %.cp
-	$(CMOC) $(CFLAGS) -S -o $@ $<
+	$(CMOC) -x c $(CFLAGS) -S -o $@ $<
 
 %.o: %.s
 	$(LWASM) $(AFLAGS) --obj -o $@ $<
